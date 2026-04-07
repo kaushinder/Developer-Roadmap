@@ -6,6 +6,8 @@
   "author": "kaushinder singh raghav",
   "type": "commonjs",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {
