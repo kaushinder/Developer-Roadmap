@@ -1,0 +1,21 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "React Projects for the Developer Roadmap",
+  "license": "ISC",
+  "author": "kaushinder singh raghav",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
