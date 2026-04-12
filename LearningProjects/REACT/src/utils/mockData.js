@@ -1,57 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const IMG_CDN =
-  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          src="https://png.pngtree.com/png-clipart/20250111/original/pngtree-a-chef-holding-hamburger-and-fries-png-image_20111871.png"
-          alt="logo"
-          className="logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = ({ resData }) => {
-  const {
-    name,
-    avgRating,
-    cuisines,
-    deliveryTime,
-    costForTwo,
-    discount,
-    cloudinaryImageId,
-  } = resData;
-
-  return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img src={IMG_CDN + cloudinaryImageId} alt={name} className="res-logo" />
-      <h3>{name}</h3>
-      <h4>{avgRating} stars ⭐</h4>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{deliveryTime}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{discount}</h4>
-    </div>
-  );
-};
-
-const resObj = {
-  restaurants: [
+export const resObj = {
+  res: [
     {
       id: "1001842",
       name: "Pizza Hut",
@@ -488,35 +436,3 @@ const resObj = {
     },
   ],
 };
-
-const Body = () => {
-  return (
-    <div className="Body">
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Search for restaurant, cuisine or a dish"
-        />
-        <button className="search-btn">Search</button>
-      </div>
-
-      <div className="res-container">
-        {resObj.restaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
